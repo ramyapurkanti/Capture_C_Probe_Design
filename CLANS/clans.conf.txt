@@ -1,0 +1,89 @@
+#config file for clans.jar
+*Copyright (C) 2004 Tancred Frickey
+*Distributed under the GNU General Public Licence
+*CLANS is free software; you can redistribute it and/or modify
+*it under the terms of the GNU General Public License as published by
+*the Free Software Foundation.
+*
+*This program is distributed in the hope that it will be useful,
+*but WITHOUT ANY WARRANTY; without even the implied warranty of
+*MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*GNU General Public License for more details.
+
+#all options specified in this file can also be entered via the command line
+
+#-conf
+#name of the configuration file
+#-conf clans.conf
+
+#-infile
+#this is a parameter that should be specified on the command line
+#unless you are loading old data or just want the interface to show
+
+#-cmd
+#a string to prepend to all commands (i.e. "nice 19" (unix) or "cmd" (windows))
+
+#-blastpath
+#path to the blast executable (NCBI blast)
+-blastpath "blastpgp -j 3 -h 0.001"
+
+#-formatdbpath
+#path to the formatdb executable (NCBI)
+-formatdbpath formatdb
+
+#-referencedb
+#alternate reference databases you want to search (with blastpgp) to build a profile
+
+#-eval
+#extract hits up to evalues of 
+-eval 10
+
+#-pval
+#extract hits up t P-values of
+-pval 0.1
+
+#-verbose
+#verbose mode (0-10)
+-verbose 1
+
+#-cpu
+#number of CPU to use
+-cpu 1
+
+#-readblast
+#read results from a former run
+-readblast T
+
+#-savepos
+#save the positional information while clustering (slower, but can be recovered after a crash)
+-savepos F
+
+#-docalc
+#do calculations or just show the interface
+-docalc T
+
+#-olddata
+#read old data from a savefile
+
+#-newseqs
+#sequences present in newseqs are added to olddata and clustered
+
+#-enrichseqs (F/t)
+#take the sequences from newseqs and enrich them with related sequences (from referencedb)
+
+#-gatherseqseval
+#get sequences (for enrichment) up to evalues of
+-gatherseqseval 1e-10
+
+#-rmseqseval
+#do not add sequences (for enrichment) more similar than evalues of
+-rmseqseval 1e-25
+
+#-maxenrichseqsnum
+#get at most this number of sequences per newseq
+-maxenrichseqsnum 10000
+
+#-exhaustive
+#when adding new sequences to existing data; how should the pairwise blast hits be computed?
+# 0=one way search, 1=re-search with the sequences that had hits, forget the rest, 2=redo all blast runs 
+-exhaustive 1

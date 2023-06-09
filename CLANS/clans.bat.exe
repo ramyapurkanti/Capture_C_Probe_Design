@@ -1,0 +1,1 @@
+javaw -Xmx300m -jar clans.jar %1

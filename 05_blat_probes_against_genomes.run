@@ -1,0 +1,36 @@
+#!/bin/bash
+#SBATCH -n 4                # Number of cores
+#SBATCH -t 0-10:00          # Runtime in D-HH:MM, minimum of 10 minutes
+#SBATCH -p cpu              # Partition to submit to
+#SBATCH --mem=64000           # Memory pool for all cores (see also --mem-per-cpu)
+
+module load gcc/10.4.0 blat/433
+cd /scratch/rpurkant/3C_Probe_Design
+
+blat Genome_Indexes/ABH_genome_index/fDreABH1_chr1-chr25.fa 3C_70bp_oligos/GRCz11/GRCz11_uniq_mir430probes.fa Blat_results/GRCz11_miR430_probes_Blatgenome_ABH.psl
+blat Genome_Indexes/GRCz11_genome_index/danRer11_chr1-chr25.fa 3C_70bp_oligos/GRCz11/GRCz11_uniq_mir430probes.fa Blat_results/GRCz11_miR430_probes_Blatgenome_GRCz11.psl
+blat Genome_Indexes/GRCz11_Yang_chr4_genome_index/danRer11_chr4-Yang_chr1-chr25.fa 3C_70bp_oligos/GRCz11/GRCz11_uniq_mir430probes.fa Blat_results/GRCz11_miR430_probes_Blatgenome_GRCz11_Yang-chr4.psl
+blat Genome_Indexes/TuH_genome_index/fDreTuH1_chr1-chr25.fa 3C_70bp_oligos/GRCz11/GRCz11_uniq_mir430probes.fa Blat_results/GRCz11_miR430_probes_Blatgenome_TuH.psl
+
+blat Genome_Indexes/ABH_genome_index/fDreABH1_chr1-chr25.fa 3C_70bp_oligos/GRCz11_Yang-chr4/GRCz11_Yang-chr4_uniq_mir430probes.fa Blat_results/GRCz11_Yang-chr4_miR430_probes_Blatgenome_ABH.psl
+blat Genome_Indexes/GRCz11_genome_index/danRer11_chr1-chr25.fa 3C_70bp_oligos/GRCz11_Yang-chr4/GRCz11_Yang-chr4_uniq_mir430probes.fa Blat_results/GRCz11_Yang-chr4_miR430_probes_Blatgenome_GRCz11.psl
+blat Genome_Indexes/GRCz11_Yang_chr4_genome_index/danRer11_chr4-Yang_chr1-chr25.fa 3C_70bp_oligos/GRCz11_Yang-chr4/GRCz11_Yang-chr4_uniq_mir430probes.fa Blat_results/GRCz11_Yang-chr4_miR430_probes_Blatgenome_GRCz11_Yang-chr4.psl
+blat Genome_Indexes/TuH_genome_index/fDreTuH1_chr1-chr25.fa 3C_70bp_oligos/GRCz11_Yang-chr4/GRCz11_Yang-chr4_uniq_mir430probes.fa Blat_results/GRCz11_Yang-chr4_miR430_probes_Blatgenome_TuH.psl
+
+blat Genome_Indexes/ABH_genome_index/fDreABH1_chr1-chr25.fa 3C_70bp_oligos/ABH/ABH_uniq_mir430probes.fa Blat_results/ABH_miR430_probes_Blatgenome_ABH.psl
+blat Genome_Indexes/GRCz11_genome_index/danRer11_chr1-chr25.fa 3C_70bp_oligos/ABH/ABH_uniq_mir430probes.fa Blat_results/ABH_miR430_probes_Blatgenome_GRCz11.psl
+blat Genome_Indexes/GRCz11_Yang_chr4_genome_index/danRer11_chr4-Yang_chr1-chr25.fa 3C_70bp_oligos/ABH/ABH_uniq_mir430probes.fa Blat_results/ABH_miR430_probes_Blatgenome_GRCz11_Yang-chr4.psl
+blat Genome_Indexes/TuH_genome_index/fDreTuH1_chr1-chr25.fa 3C_70bp_oligos/ABH/ABH_uniq_mir430probes.fa Blat_results/ABH_miR430_probes_Blatgenome_TuH.psl
+
+
+blat Genome_Indexes/ABH_genome_index/fDreABH1_chr1-chr25.fa 3C_70bp_oligos/TuH/TuH_uniq_mir430probes.fa Blat_results/TuH_miR430_probes_Blatgenome_ABH.psl
+blat Genome_Indexes/GRCz11_genome_index/danRer11_chr1-chr25.fa 3C_70bp_oligos/TuH/TuH_uniq_mir430probes.fa Blat_results/TuH_miR430_probes_Blatgenome_GRCz11.psl
+blat Genome_Indexes/GRCz11_Yang_chr4_genome_index/danRer11_chr4-Yang_chr1-chr25.fa 3C_70bp_oligos/TuH/TuH_uniq_mir430probes.fa Blat_results/TuH_miR430_probes_Blatgenome_GRCz11_Yang-chr4.psl
+blat Genome_Indexes/TuH_genome_index/fDreTuH1_chr1-chr25.fa 3C_70bp_oligos/TuH/TuH_uniq_mir430probes.fa Blat_results/TuH_miR430_probes_Blatgenome_TuH.psl
+
+
+blat Genome_Indexes/ABH_genome_index/fDreABH1_chr1-chr25.fa 3C_70bp_oligos/All_assemblies_pooled_uniq_mir430probes.fa Blat_results/All_assemblies_pooled_miR430_probes_Blatgenome_ABH.psl
+blat Genome_Indexes/GRCz11_genome_index/danRer11_chr1-chr25.fa 3C_70bp_oligos/All_assemblies_pooled_uniq_mir430probes.fa Blat_results/All_assemblies_pooled_miR430_probes_Blatgenome_GRCz11.psl
+blat Genome_Indexes/GRCz11_Yang_chr4_genome_index/danRer11_chr4-Yang_chr1-chr25.fa 3C_70bp_oligos/All_assemblies_pooled_uniq_mir430probes.fa Blat_results/All_assemblies_pooled_miR430_probes_Blatgenome_GRCz11_Yang-chr4.psl
+blat Genome_Indexes/TuH_genome_index/fDreTuH1_chr1-chr25.fa 3C_70bp_oligos/All_assemblies_pooled_uniq_mir430probes.fa Blat_results/All_assemblies_pooled_miR430_probes_Blatgenome_TuH.psl
+

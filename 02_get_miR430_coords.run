@@ -1,0 +1,16 @@
+#!/bin/bash
+#SBATCH -n 1                # Number of cores
+#SBATCH -t 0-5:00          # Runtime in D-HH:MM, minimum of 10 minutes
+#SBATCH -p cpu	            # Partition to submit to
+#SBATCH --mem=16000           # Memory pool for all cores (see also --mem-per-cpu)
+
+module load gcc/10.4.0 blast-plus/2.12.0
+makeblastdb -in /scratch/rpurkant/3C_Probe_Design/Genome_Indexes/ABH_genome_index/fDreABH1_chr1-chr25.fa -dbtype 'nucl'
+makeblastdb -in /scratch/rpurkant/3C_Probe_Design/Genome_Indexes/GRCz11_Yang_chr4_genome_index/danRer11_chr4-Yang_chr1-chr25.fa -dbtype 'nucl'
+makeblastdb -in /scratch/rpurkant/3C_Probe_Design/Genome_Indexes/GRCz11_genome_index/danRer11_chr1-chr25.fa -dbtype 'nucl'
+makeblastdb -in /scratch/rpurkant/3C_Probe_Design/Genome_Indexes/TuH_genome_index/fDreTuH1_chr1-chr25.fa -dbtype 'nucl'
+
+blastn -db /scratch/rpurkant/3C_Probe_Design/Genome_Indexes/ABH_genome_index/fDreABH1_chr1-chr25.fa -query miR430_sequences.fa -out ABH_miR430_coords.tab -outfmt 6
+blastn -db /scratch/rpurkant/3C_Probe_Design/Genome_Indexes/GRCz11_Yang_chr4_genome_index/danRer11_chr4-Yang_chr1-chr25.fa -query miR430_sequences.fa -out GRCz11_Yang-chr4_miR430_coords.tab -outfmt 6
+blastn -db /scratch/rpurkant/3C_Probe_Design/Genome_Indexes/GRCz11_genome_index/danRer11_chr1-chr25.fa -query miR430_sequences.fa -out GRCz11_miR430_coords.tab -outfmt 6
+blastn -db /scratch/rpurkant/3C_Probe_Design/Genome_Indexes/TuH_genome_index/fDreTuH1_chr1-chr25.fa -query miR430_sequences.fa  -out TuH_miR430_coords.tab -outfmt 6
