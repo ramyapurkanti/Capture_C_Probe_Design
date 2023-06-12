@@ -1,0 +1,36 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = (unset)
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+RepeatMasker version open-4.0.8
+Search Engine: NCBI/RMBLAST [ 2.13.0+ ]
+Master RepeatMasker Database: /work/FAC/FBM/CIG/nvastenh/omics/RAMYA/Softwares/RepeatMasker/Libraries/RepeatMaskerLib.embl ( Complete Database: dc20181026 )
+
+
+
+analyzing file oligo_seqs.fa
+
+Some previous RepeatMasker output files were moved to the directory 
+./oligo_seqs.fa.preWedMay101354222023.RMoutput 
+in order not to overwrite them.
+
+
+Checking for E. coli insertion elements
+identifying Simple Repeats in batch 1 of 1
+identifying Simple Repeats in batch 1 of 1
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = (unset)
+    are supported and installed on your system.
+perl: warning: Falling back to the standard locale ("C").
+
+
+
+No repetitive sequences were detected in oligo_seqs.fa

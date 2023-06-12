@@ -1,0 +1,7 @@
+## Total Sequences: 34
+## Total Length: 2380
+## Total NonMask ( excluding >20bp runs of N/X bases ): 2380
+## Total NonSub ( excluding all non ACGT bases ):2380
+RepeatMasker version open-4.0.8 , sensitive mode
+run with rmblastn version 2.13.0+
+RepeatMasker Combined Database: Dfam_Consensus-20181026

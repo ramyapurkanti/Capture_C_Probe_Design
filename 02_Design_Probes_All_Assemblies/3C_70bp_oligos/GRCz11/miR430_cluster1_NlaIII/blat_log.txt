@@ -1,0 +1,2 @@
+Loaded 1345101833 letters in 25 sequences
+Searched 8960 bases in 128 sequences

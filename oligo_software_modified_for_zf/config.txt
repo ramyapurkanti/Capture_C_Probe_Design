@@ -1,0 +1,9 @@
+### Replace the paths below with your directories that contain executables for STAR, BLAT and RepeatMasker (RM) ###
+
+#STAR_PATH = /package/rna-star/2.5.1b/bin
+#BLAT_PATH = /package/blat/35/bin
+#RM_PATH = /package/repeatmasker/3.2.8/RepeatMasker
+
+STAR_PATH = /dcsrsoft/spack/arolle/v1.0/spack/opt/spack/linux-rhel8-zen2/gcc-10.4.0/star-2.7.6a-my53qpmt53edtqiipk2cbf7xsgh52k55/bin
+BLAT_PATH = /dcsrsoft/spack/arolle/v1.0/spack/opt/spack/linux-rhel8-zen2/gcc-10.4.0/blat-433-xbfag5n7xerft7q3l36vf5gorljrzjfe/bin
+RM_PATH = /work/FAC/FBM/CIG/nvastenh/omics/RAMYA/Softwares/RepeatMasker
