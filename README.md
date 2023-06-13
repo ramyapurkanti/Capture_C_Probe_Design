@@ -50,8 +50,3 @@ Step3: Combining probes from multiple assemblies into a universal probe list
 ```
 03_Compile_Universal_ProbeList
 ```
-Step4: Visualizing sequence diversity of designed probes using CLANS
--
-```
-04_Exploring_ProbeDiversity
-```
